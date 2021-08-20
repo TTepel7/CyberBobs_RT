@@ -11,4 +11,7 @@ docker-compose build
 
 after
 
-~~~~run serve.bat~~~~ or docker-compose up
+run serve.bat or 
+~~~~
+docker-compose up
+~~~~
