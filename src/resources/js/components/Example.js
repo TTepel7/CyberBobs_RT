@@ -18,7 +18,8 @@ function Example() {
 }
 
 export default Example;
-
+import { ThemeProvider } from '@design-system-rt/rtk-ui-kit';
+import { Button } from '@design-system-rt/rtk-ui-kit';
 if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+    ReactDOM.render(<ThemeProvider themeName="light"><Button   onClick={()=>alert('Хана')}>Конец</Button></ThemeProvider>, document.getElementById('example'));
 }
