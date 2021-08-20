@@ -20,8 +20,6 @@ services:
         build: ./docker-assets/php
         links:
             - mysql
-            - redis
-            - mailhog
         volumes:
             - ./src:/src
         working_dir: /src
