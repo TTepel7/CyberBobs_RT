@@ -12,6 +12,8 @@ import { Car, ThemeProvider } from '@design-system-rt/rtk-ui-kit';
 import ToolBar from "./ToolBar";
 import WorkArea from "./WorkArea";
 import BlockLibrary from './BlockLibrary';
+import ToolBarBlock from './blocks/ToolBarBlock';
+
 
 import CardsBlock from './blocks/CardsBlock';
 
@@ -20,11 +22,22 @@ function Example() {
 
     const [sender, setSender] = React.useState([])
 
+    const [object, setObject] = React.useState({})
+
+    const [propObj, setPropObj] = React.useState({})
 
     function get_input_change(value) {
         setSender([value])
     }
 
+    function getBlockForProps(value) {
+        setObject(value)
+    }
+
+    function gettingObject(value) {
+        let newData = value;
+        setPropObj({ ...value })
+    }
 
 
     return (
@@ -33,7 +46,8 @@ function Example() {
                 <ToolBar className='tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
                 <div className="cyber-content">
                     <BlockLibrary input_change={get_input_change}></BlockLibrary>
-                    <WorkArea sender={sender}></WorkArea>
+                    <WorkArea sender={sender} click_change={getBlockForProps} propObj={propObj}></WorkArea>
+                    <ToolBarBlock object={object} changeCallback={gettingObject} ></ToolBarBlock>
                 </div>
             </div>
 
