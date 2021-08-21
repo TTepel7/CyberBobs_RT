@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container-fluid">
-    <div id="PaymentBlock"></div>
+    <div id="FooterBlock"></div>
 </div>
 @endsection
