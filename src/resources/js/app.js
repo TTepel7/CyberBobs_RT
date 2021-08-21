@@ -18,5 +18,5 @@ require('./components/Example');
 require('./components/blocks/CardsBlock');
 require('./components/blocks/PaymentBlock');
 require('./components/blocks/FooterBlock');
-
+require('./components/blocks/HeaderBlock');
 
