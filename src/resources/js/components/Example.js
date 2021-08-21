@@ -1,25 +1,86 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Example() {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Example Component</div>
-
-                        <div className="card-body">I'm an example component!</div>
-                    </div>
-                </div>
+import { ThemeProvider } from '@design-system-rt/rtk-ui-kit';
+import { Button, InputText, SettingsAdjust } from '@design-system-rt/rtk-ui-kit';
+class ToolBar extends React.Component {
+    render() {
+        return (
+            <div className="tool-bar">
+                <p>Test title</p>
             </div>
-        </div>
-    );
+        )
+    }
 }
 
-export default Example;
-import { ThemeProvider } from '@design-system-rt/rtk-ui-kit';
-import { Button } from '@design-system-rt/rtk-ui-kit';
+class BlocksLibrary extends React.Component {
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
+}
+
+class PropsBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            inputLabel: ""
+        }
+    }
+
+    render() {
+        return (
+
+            <div className="props-bar">
+                <InputText
+                    label="Label"
+                    icon={<SettingsAdjust />}
+                    value={this.state.inputLabel}
+                    onBlur={function noRefCheck() { }}
+                    onChange={() => {
+                        this.props.updateData(this.state.inputLabel)
+                        console.log("done")
+                    }}
+                    onClickIcon={function noRefCheck() { }}
+                    onFocus={function noRefCheck() { }}
+                    onInputClick={function noRefCheck() { }}
+                    onInputKeyDown={function noRefCheck() { }}
+                    onInvalid={function noRefCheck() { }}
+                />
+            </div>
+        )
+    }
+}
+
+class WorkArea extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            buttonLabel: ""
+        }
+    }
+
+    updateData = (value) => {
+        this.setState({ buttonLabel: value })
+    }
+
+    render() {
+        const label = this.state.buttonLabel
+        return (
+            <div>
+                <Button color="primary1">{label}</Button>
+            </div>
+        )
+    }
+}
+
 if (document.getElementById('example')) {
-    ReactDOM.render(<ThemeProvider themeName="light"><Button   onClick={()=>alert('Хана')}>Конец</Button></ThemeProvider>, document.getElementById('example'));
+    ReactDOM.render(
+        <ThemeProvider themeName="light">
+            <WorkArea></WorkArea>
+            <PropsBar></PropsBar>
+        </ThemeProvider>, document.getElementById('example'));
 }
