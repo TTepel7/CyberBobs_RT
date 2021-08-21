@@ -10002,3 +10002,20 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.block1 {
+  background-color: red;
+  width: 400px;
+  height: 100px;
+}
+
+.block2 {
+  background-color: green;
+  width: 400px;
+  height: 100px;
+}
+
+.block3 {
+  background-color: blue;
+  width: 400px;
+  height: 100px;
+}
