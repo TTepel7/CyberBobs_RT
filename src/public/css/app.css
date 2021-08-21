@@ -10082,3 +10082,11 @@ h3 {
   border: 1px solid #c1c1c1;
   overflow: auto;
 }
+
+.block-component .deleteButton {
+  display: none;
+}
+
+.block-component:hover .deleteButton {
+  display: block;
+}
