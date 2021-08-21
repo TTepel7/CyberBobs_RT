@@ -7,7 +7,7 @@ import { Switch, RadioGroup, RadioButton, Button } from '@design-system-rt/rtk-u
 
 
 
-function ToolBar() {
+function ToolBar({text,SwitchCallback}) {
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
@@ -19,14 +19,16 @@ function ToolBar() {
         <div className="tool-bar" >
             <Switch
                 color="primary2"
-                defaultChecked
-                onChange={function noRefCheck() { }}
+                onChange={(v)=>{
+                    SwitchCallback(v);
+                }}
                 shape="circular"
                 text="Тёмная тема"
                 textPosition="right"
                 textStyle={{
-                    'padding-right':'1rem'
+                    paddingRight:'1rem'
                 }}
+                defaultChecked={false}
             />
             <RadioGroup
                 onChange={function noRefCheck() { }}
@@ -40,7 +42,7 @@ function ToolBar() {
                     value="key1"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Геометрический
@@ -51,7 +53,7 @@ function ToolBar() {
                     value="key2"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Скруглённый
@@ -61,13 +63,13 @@ function ToolBar() {
                     value="key3"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Круглый
                 </RadioButton>
             </RadioGroup>
-            <Button style={{ float: "right", 'padding-right':"1rem",'margin-left': 'auto', 'margin-top': '-0.75rem'}} shape="circular">Экспортировать</Button>
+            <Button style={{ float: "right", paddingRight:"1rem",marginLeft: 'auto', marginTop: '-0.75rem'}} shape="circular">Экспортировать</Button>
         </div>
     );
 }

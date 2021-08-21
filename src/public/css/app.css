@@ -10037,3 +10037,24 @@ h3 {
   height: 40px;
   background-color: black;
 }
+
+.cards-blocks-img {
+  display: inline-block;
+  overflow: hidden;
+  transition: 1s;
+  /* Время эффекта */
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cards-blocks-img img {
+  display: block;
+  transition: 1s;
+  /* Время эффекта */
+}
+
+.cards-blocks-img img:hover {
+  transform: scale(1.2);
+  /* Увеличиваем масштаб */
+}
