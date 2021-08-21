@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import WorkArea from "./WorkArea";
 
-import { Switch } from '@design-system-rt/rtk-ui-kit';
+import { Switch, RadioGroup, RadioButton, Button } from '@design-system-rt/rtk-ui-kit';
 
 
 
@@ -20,11 +20,54 @@ function ToolBar() {
             <Switch
                 color="primary2"
                 defaultChecked
-                onChange={function noRefCheck(){}}
+                onChange={function noRefCheck() { }}
                 shape="circular"
-                text="Автообновление"
+                text="Тёмная тема"
                 textPosition="right"
-                />
+                textStyle={{
+                    'padding-right':'1rem'
+                }}
+            />
+            <RadioGroup
+                onChange={function noRefCheck() { }}
+                value="key1"
+                style={{
+                    display: 'inline'
+                }}
+            >
+                <RadioButton
+                    name="rb1"
+                    value="key1"
+                    style={{
+                        top:'-0.75rem',
+                        'padding-right':'1rem'
+                    }}
+                >
+                    Геометрический
+                </RadioButton>
+                <RadioButton
+
+                    name="rb2"
+                    value="key2"
+                    style={{
+                        top:'-0.75rem',
+                        'padding-right':'1rem'
+                    }}
+                >
+                    Скруглённый
+                </RadioButton>
+                <RadioButton
+                    name="rb3"
+                    value="key3"
+                    style={{
+                        top:'-0.75rem',
+                        'padding-right':'1rem'
+                    }}
+                >
+                    Круглый
+                </RadioButton>
+            </RadioGroup>
+            <Button style={{ float: "right", 'padding-right':"1rem",'margin-left': 'auto', 'margin-top': '-0.75rem'}} shape="circular">Экспортировать</Button>
         </div>
     );
 }

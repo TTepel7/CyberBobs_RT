@@ -19,9 +19,9 @@ function Example() {
 
     }
     return (
-        <ThemeProvider themeName="light">
+        <ThemeProvider themeName="dark">
             <div className="cyber-app">
-                <ToolBar ></ToolBar>
+                <ToolBar className= 'tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
 
                 <div className="card">
                     <div className="card-header">Example Component {option.text}</div>
