@@ -10020,10 +10020,6 @@ h3 {
   height: 100px;
 }
 
-.work-area {
-  background-color: aquamarine;
-}
-
 .tool-bar {
   background-color: #313A49;
   height: 76px;
@@ -10036,4 +10032,47 @@ h3 {
   top: -0.75rem;
   height: 40px;
   background-color: black;
+}
+
+.cards-blocks-img {
+  display: inline-block;
+  overflow: hidden;
+  transition: 1s;
+  /* Время эффекта */
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cards-blocks-img img {
+  display: block;
+  transition: 1s;
+  /* Время эффекта */
+}
+
+.cards-blocks-img img:hover {
+  transform: scale(1.2);
+  /* Увеличиваем масштаб */
+}
+
+.block-library {
+  width: 20%;
+  background-color: lightgrey;
+  height: 700px;
+}
+
+.library-item {
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: 1px solid black;
+  padding-top: 0.5rem;
+  text-align: center;
+  background-color: lightgrey;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.cyber-content {
+  display: flex;
 }

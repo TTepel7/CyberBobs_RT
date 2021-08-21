@@ -3,37 +3,42 @@ import ReactDOM from 'react-dom';
 import Button_test from './Button_test';
 import Input_test from "./input_test";
 
-import { ThemeProvider } from '@design-system-rt/rtk-ui-kit';
+import Context from '../context'
+
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
+import { Car, ThemeProvider } from '@design-system-rt/rtk-ui-kit';
 import ToolBar from "./ToolBar";
 import WorkArea from "./WorkArea";
+import BlockLibrary from './BlockLibrary';
+
+import CardsBlock from './blocks/CardsBlock';
+
 
 function Example() {
 
+    const [sender, setSender] = React.useState([])
 
-    const [option, setOption] = React.useState({
-        text: 'Проверка'
-    });
 
     function get_input_change(value) {
-        setOption({ text: value })
-
+        setSender([value])
     }
+
+
+
     return (
         <ThemeProvider themeName="dark">
             <div className="cyber-app">
-                <ToolBar className= 'tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
-
-                <div className="card">
-                    <div className="card-header">Example Component {option.text}</div>
-
-                    <div className="card-body">I'm an example component!
-                        <WorkArea text={option.text}></WorkArea>
-                    </div>
-
+                <ToolBar className='tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
+                <div className="cyber-content">
+                    <BlockLibrary input_change={get_input_change}></BlockLibrary>
+                    <WorkArea sender={sender}></WorkArea>
                 </div>
             </div>
 
         </ThemeProvider>
+
 
     );
 }

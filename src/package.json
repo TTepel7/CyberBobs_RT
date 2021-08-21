@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "@design-system-rt/rtk-fonts": "^3.0.0",
-        "@design-system-rt/rtk-ui-kit": "^4.2.5"
+        "@design-system-rt/rtk-ui-kit": "^4.2.5",
+        "react-dnd": "^14.0.3",
+        "react-dnd-html5-backend": "^14.0.1"
     }
 }

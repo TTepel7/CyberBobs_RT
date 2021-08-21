@@ -25,7 +25,7 @@ function ToolBar() {
                 text="Тёмная тема"
                 textPosition="right"
                 textStyle={{
-                    'padding-right':'1rem'
+                    paddingRight:'1rem'
                 }}
             />
             <RadioGroup
@@ -40,7 +40,7 @@ function ToolBar() {
                     value="key1"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Геометрический
@@ -51,7 +51,7 @@ function ToolBar() {
                     value="key2"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Скруглённый
@@ -61,13 +61,13 @@ function ToolBar() {
                     value="key3"
                     style={{
                         top:'-0.75rem',
-                        'padding-right':'1rem'
+                        paddingRight:'1rem'
                     }}
                 >
                     Круглый
                 </RadioButton>
             </RadioGroup>
-            <Button style={{ float: "right", 'padding-right':"1rem",'margin-left': 'auto', 'margin-top': '-0.75rem'}} shape="circular">Экспортировать</Button>
+            <Button style={{ float: "right", paddingRight:"1rem",marginLeft: 'auto', marginTop: '-0.75rem'}} shape="circular">Экспортировать</Button>
         </div>
     );
 }

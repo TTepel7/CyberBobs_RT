@@ -23,7 +23,7 @@
     height: 100px;
 }
 .work-area{
-    background-color: aquamarine;
+
 }
 
 .tool-bar{
@@ -58,4 +58,25 @@
 }
 .cards-blocks-img img:hover {
     transform: scale(1.2); /* Увеличиваем масштаб */
+}
+
+.block-library{
+    width: 20%;
+    background-color: lightgrey;
+    height: 700px;
+}
+
+.library-item{
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    border: 1px solid black;
+    padding-top: 0.5rem;
+    text-align: center;
+    background-color: lightgrey;
+    cursor: grab;
+}
+
+.cyber-content{
+    display: flex;
 }
