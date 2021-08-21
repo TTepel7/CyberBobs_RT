@@ -27,6 +27,9 @@
     "dependencies": {
         "@design-system-rt/rtk-fonts": "^3.0.0",
         "@design-system-rt/rtk-ui-kit": "^4.2.5",
+        "downloadjs": "^1.4.7",
+        "html-to-image": "^1.7.0",
+        "html2canvas": "^1.3.2",
         "react-dnd": "^14.0.3",
         "react-dnd-html5-backend": "^14.0.1",
         "uuid": "^3.4.0"
