@@ -5,45 +5,58 @@ import {Box} from '@design-system-rt/rtk-ui-kit';
 import {Typography} from '@design-system-rt/rtk-ui-kit';
 import {ThemeProvider} from '@design-system-rt/rtk-ui-kit';
 
-function CardsBlock() {
+function CardsBlock({title, cards}) {
 
     return (
         <ThemeProvider themeName="light">
+            <Typography
+                className="ml-4"
+                color={title.color || "main"}
+                variant={title.variant || "mega"}
+            >
+                {title.text || "Главный заголовок"}
+            </Typography>
             <div className="row justify-content-center">
 
-
-                <div className="col-3 p-3">
-                    <Box
-                        cornersRounding="m"
-                        shadow="bottomM"
-                        spacing="m"
-                        spacingBottom="s"
-                    >
-                        <img className="card-img-top mb-3" src="https://ekt.rt.ru/sites/default/files/b2c/special/Knigi_467%E2%95%A4%D0%95264px.jpg" alt="Card image cap">
-                        </img>
-                        <Typography
-                            color="main"
-                            variant="h2"
-                        >
-                            Заголовок
-                        </Typography>
-                        <Typography
-                            color="caption"
-                            variant="caption"
-                            spacingBottom="s"
-                        >
-                            dasdasdasd dasdasdasd  dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd dasdasdasd
-                        </Typography>
-                        <Typography variant="bodyM">
-                            <a
-                                href="/?path=/docs/base-and-styles-spacing--inner-spacing"
-                                target="_blank"
+                {cards.map((card, i) => {
+                    return (
+                        <div className="col-3 p-3" key={i}>
+                            <Box
+                                cornersRounding={card.box.cornersRounding || "m"}
+                                shadow={card.box.shadow || "bottomM"}
+                                spacing={card.box.spacing || "m"}
+                                spacingBottom={card.box.spacingBottom || "s"}
                             >
-                                Подробнее
-                            </a>
-                        </Typography>
-                    </Box>
-                </div>
+                                <div className="cards-blocks-img">
+                                <img className="card-img-top mb-3 rounded cards-blocks-img"
+                                     src={card.img || "https://ekt.rt.ru/sites/default/files/b2c/special/Knigi_467%E2%95%A4%D0%95264px.jpg"}
+                                     alt="Card image cap" />
+                                </div>
+                                <Typography
+                                    color={card.title.color || "main"}
+                                    variant={card.title.variant || "h2"}
+                                >
+                                    {card.title.text || "Заголовок"}
+                                </Typography>
+                                <Typography
+                                    color={card.caption.color || "caption"}
+                                    variant={card.caption.variant || "caption"}
+                                    spacingBottom="s"
+                                >
+                                    {card.caption.text || "Описание"}
+                                </Typography>
+                                <Typography variant="bodyM">
+                                    <a
+                                        href={card.link.href || "#"}
+                                        target="_blank"
+                                    >
+                                        {card.link.text || "Подробнее"}
+                                    </a>
+                                </Typography>
+                            </Box>
+                        </div>
+                    );
+                })}
 
 
             </div>
@@ -54,5 +67,106 @@ function CardsBlock() {
 export default CardsBlock;
 
 if (document.getElementById('CardsBlock')) {
-    ReactDOM.render(<CardsBlock/>, document.getElementById('CardsBlock'));
+    ReactDOM.render(
+        <CardsBlock
+            title={{
+                text: "Главный заголовок",
+                color: "main",
+                variant: "mega"
+            }}
+            cards={[
+                {
+                    box: {
+                        cornersRounding: "m",
+                        shadow: "bottomM",
+                        spacing: "m",
+                        spacingBottom: "s"
+                    },
+                    img: null,
+                    title: {
+                        text: "Заголовок",
+                        color: "main",
+                        variant: "h2"
+                    },
+                    caption: {
+                        text: "Описание",
+                        color: "caption",
+                        variant: "caption"
+                    },
+                    link: {
+                        text: "Подробнее",
+                        href: "#"
+                    }
+                },
+                {
+                    box: {
+                        cornersRounding: "m",
+                        shadow: "bottomM",
+                        spacing: "m",
+                        spacingBottom: "s"
+                    },
+                    img: null,
+                    title: {
+                        text: "Заголовок",
+                        color: "main",
+                        variant: "h2"
+                    },
+                    caption: {
+                        text: "Описание",
+                        color: "caption",
+                        variant: "caption"
+                    },
+                    link: {
+                        text: "Подробнее",
+                        href: "#"
+                    }
+                },
+                {
+                    box: {
+                        cornersRounding: "m",
+                        shadow: "bottomM",
+                        spacing: "m",
+                        spacingBottom: "s"
+                    },
+                    img: null,
+                    title: {
+                        text: "Заголовок",
+                        color: "main",
+                        variant: "h2"
+                    },
+                    caption: {
+                        text: "Описание",
+                        color: "caption",
+                        variant: "caption"
+                    },
+                    link: {
+                        text: "Подробнее",
+                        href: "#"
+                    }
+                },
+                {
+                    box: {
+                        cornersRounding: "m",
+                        shadow: "bottomM",
+                        spacing: "m",
+                        spacingBottom: "s"
+                    },
+                    img: "https://klike.net/uploads/posts/2019-09/1568528411_3.jpg",
+                    title: {
+                        text: "Заголовок",
+                        color: "main",
+                        variant: "h2"
+                    },
+                    caption: {
+                        text: "Описание",
+                        color: "caption",
+                        variant: "caption"
+                    },
+                    link: {
+                        text: "Подробнее",
+                        href: "#"
+                    }
+                }
+            ]}
+        ></CardsBlock>, document.getElementById('CardsBlock'));
 }

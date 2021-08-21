@@ -22,3 +22,18 @@
     width: 400px;
     height: 100px;
 }
+
+.cards-blocks-img {
+    display: inline-block;
+    overflow: hidden;
+    transition: 1s; /* Время эффекта */
+    height: 210px;
+    object-fit: cover;
+}
+.cards-blocks-img img {
+    display: block;
+    transition: 1s; /* Время эффекта */
+}
+.cards-blocks-img img:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+}
