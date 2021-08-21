@@ -37,3 +37,8 @@
 .cards-blocks-img img:hover {
     transform: scale(1.2); /* Увеличиваем масштаб */
 }
+.tool-bar-scroll{
+    height: 500px;
+    border: 1px solid #c1c1c1;
+    overflow: auto;
+}
