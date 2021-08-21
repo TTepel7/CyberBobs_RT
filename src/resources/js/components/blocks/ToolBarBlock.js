@@ -35,6 +35,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'success'
                                                 }
                                             ]}
+                                            value={value.color}
                                             onChange={(s_v) => {
                                                 object[key].color = s_v;
                                                 changeCallback(object);
@@ -73,6 +74,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'h4'
                                                 }
                                             ]}
+                                            value={value.variant}
                                             onChange={(s_v) => {
                                                 object[key].variant = s_v;
                                                 changeCallback(object);
@@ -81,6 +83,7 @@ function ToolBarBlock({object, changeCallback}) {
                                 </div>
                                 <div className="p-3">
                                     <InputText label="Текст"
+                                               value={value.text}
                                                onChange={() => {
                                                    object[key].text = event.target.value;
                                                    changeCallback(object);
@@ -112,6 +115,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'xl'
                                                 }
                                             ]}
+                                            value={value.box.spacing}
                                             onChange={(s_v) => {
                                                 object[key].box.spacing = s_v;
                                                 changeCallback(object);
@@ -138,6 +142,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'bottomXL'
                                                 }
                                             ]}
+                                            value={value.box.shadow}
                                             onChange={(s_v) => {
                                                 object[key].box.shadow = s_v;
                                                 changeCallback(object);
@@ -168,6 +173,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'xl'
                                                 }
                                             ]}
+                                            value={value.box.cornersRounding}
                                             onChange={(s_v) => {
                                                 object[key].box.cornersRounding = s_v;
                                                 changeCallback(object);
@@ -194,6 +200,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'success'
                                                 }
                                             ]}
+                                            value={value.title.color}
                                             onChange={(s_v) => {
                                                 object[key].title.color = s_v;
                                                 changeCallback(object);
@@ -232,6 +239,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'h4'
                                                 }
                                             ]}
+                                            value={value.title.variant}
                                             onChange={(s_v) => {
                                                 object[key].title.variant = s_v;
                                                 changeCallback(object);
@@ -240,6 +248,7 @@ function ToolBarBlock({object, changeCallback}) {
                                 </div>
                                 <div className="p-3">
                                     <InputText label="Текст заголовка"
+                                               value={value.title.text}
                                                onChange={() => {
                                                    object[key].title.text = event.target.value;
                                                    changeCallback(object);
@@ -265,6 +274,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'secondary2'
                                                 }
                                             ]}
+                                            value={value.email.color}
                                             onChange={(s_v) => {
                                                 object[key].email.color = s_v;
                                                 changeCallback(object);
@@ -287,6 +297,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'circular'
                                                 }
                                             ]}
+                                            value={value.email.shape}
                                             onChange={(s_v) => {
                                                 object[key].email.shape = s_v;
                                                 changeCallback(object);
@@ -320,6 +331,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'secondary2'
                                                 }
                                             ]}
+                                            value={value.amount.color}
                                             onChange={(s_v) => {
                                                 object[key].amount.color = s_v;
                                                 changeCallback(object);
@@ -342,6 +354,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'circular'
                                                 }
                                             ]}
+                                            value={value.amount.shape}
                                             onChange={(s_v) => {
                                                 object[key].amount.shape = s_v;
                                                 changeCallback(object);
@@ -350,6 +363,7 @@ function ToolBarBlock({object, changeCallback}) {
                                 </div>
                                 <div className="p-3">
                                     <InputText label="Текст ввода суммы"
+                                               value={value.amount.text}
                                                onChange={() => {
                                                    object[key].amount.text = event.target.value;
                                                    changeCallback(object);
@@ -375,6 +389,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'secondary2'
                                                 }
                                             ]}
+                                            value={value.btn.color}
                                             onChange={(s_v) => {
                                                 object[key].btn.color = s_v;
                                                 changeCallback(object);
@@ -397,6 +412,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                     value: 'circular'
                                                 }
                                             ]}
+                                            value={value.btn.shape}
                                             onChange={(s_v) => {
                                                 object[key].btn.shape = s_v;
                                                 changeCallback(object);
@@ -405,6 +421,7 @@ function ToolBarBlock({object, changeCallback}) {
                                 </div>
                                 <div className="p-3">
                                     <InputText label="Текст кнопки"
+                                               value={value.btn.text}
                                                onChange={() => {
                                                    object[key].btn.text = event.target.value;
                                                    changeCallback(object);
@@ -435,6 +452,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'xl'
                                             }
                                         ]}
+                                        value={value.box.spacing}
                                         onChange={(s_v) => {
                                             object[key].box.spacing = s_v;
                                             changeCallback(object);
@@ -461,6 +479,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'bottomXL'
                                             }
                                         ]}
+                                        value={value.box.shadow}
                                         onChange={(s_v) => {
                                             object[key].box.shadow = s_v;
                                             changeCallback(object);
@@ -491,6 +510,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'xl'
                                             }
                                         ]}
+                                        value={value.box.cornersRounding}
                                         onChange={(s_v) => {
                                             object[key].box.cornersRounding = s_v;
                                             changeCallback(object);
@@ -517,6 +537,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'success'
                                             }
                                         ]}
+                                        value={value.title.color}
                                         onChange={(s_v) => {
                                             object[key].title.color = s_v;
                                             changeCallback(object);
@@ -555,6 +576,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'h4'
                                             }
                                         ]}
+                                        value={value.title.variant}
                                         onChange={(s_v) => {
                                             object[key].title.variant = s_v;
                                             changeCallback(object);
@@ -563,6 +585,7 @@ function ToolBarBlock({object, changeCallback}) {
                             </div>
                             <div className="p-3">
                                 <InputText label="Текст заголовка"
+                                           value={value.title.text}
                                            onChange={() => {
                                                object[key].title.text = event.target.value;
                                                changeCallback(object);
@@ -588,6 +611,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'success'
                                             }
                                         ]}
+                                        value={value.content.color}
                                         onChange={(s_v) => {
                                             object[key].content.color = s_v;
                                             changeCallback(object);
@@ -626,6 +650,7 @@ function ToolBarBlock({object, changeCallback}) {
                                                 value: 'h4'
                                             }
                                         ]}
+                                        value={value.content.variant}
                                         onChange={(s_v) => {
                                             object[key].content.variant = s_v;
                                             changeCallback(object);
@@ -634,13 +659,14 @@ function ToolBarBlock({object, changeCallback}) {
                             </div>
                             <div className="p-3">
                                 <InputText label="Текст заголовка"
+                                           value={value.title.text}
                                            onChange={() => {
                                                object[key].title.text = event.target.value;
                                                changeCallback(object);
                                            }}></InputText>
                             </div>
                         </div>)
-                    } 
+                    }
                 })}
             </ThemeProvider>
         </div>
@@ -653,11 +679,10 @@ if (document.getElementById('ToolBarBlock')) {
     ReactDOM.render(
         <ToolBarBlock
             object={{
-                form: {
-                    box: {},
-                    title: {},
-                    email: {},
-                    amount: {}
+                title: {
+                    text: "Главный заголовок",
+                    color: "info",
+                    variant: "mega"
                 }
             }}
         ></ToolBarBlock>, document.getElementById('ToolBarBlock'));
