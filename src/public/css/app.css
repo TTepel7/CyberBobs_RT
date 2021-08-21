@@ -10076,3 +10076,9 @@ h3 {
 .cyber-content {
   display: flex;
 }
+
+.tool-bar-scroll {
+  height: 500px;
+  border: 1px solid #c1c1c1;
+  overflow: auto;
+}
