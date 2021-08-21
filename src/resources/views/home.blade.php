@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid">
+<div class="body">
     <div id="example"></div>
 </div>
 @endsection
