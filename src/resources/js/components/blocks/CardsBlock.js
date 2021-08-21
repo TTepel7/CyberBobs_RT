@@ -8,7 +8,7 @@ import {ThemeProvider} from '@design-system-rt/rtk-ui-kit';
 function CardsBlock({title, cards}) {
 
     return (
-        <ThemeProvider themeName="light">
+        <div>
             <Typography
                 className="ml-4"
                 color={title.color || "main"}
@@ -28,9 +28,9 @@ function CardsBlock({title, cards}) {
                                 spacingBottom={card.box.spacingBottom || "s"}
                             >
                                 <div className="cards-blocks-img">
-                                <img className="card-img-top mb-3 rounded cards-blocks-img"
-                                     src={card.img || "https://ekt.rt.ru/sites/default/files/b2c/special/Knigi_467%E2%95%A4%D0%95264px.jpg"}
-                                     alt="Card image cap" />
+                                    <img className="card-img-top mb-3 rounded cards-blocks-img"
+                                         src={card.img || "https://ekt.rt.ru/sites/default/files/b2c/special/Knigi_467%E2%95%A4%D0%95264px.jpg"}
+                                         alt="Card image cap"/>
                                 </div>
                                 <Typography
                                     color={card.title.color || "main"}
@@ -57,10 +57,8 @@ function CardsBlock({title, cards}) {
                         </div>
                     );
                 })}
-
-
             </div>
-        </ThemeProvider>
+        </div>
     );
 }
 
