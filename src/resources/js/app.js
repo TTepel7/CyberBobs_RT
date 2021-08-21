@@ -14,5 +14,6 @@ require('./bootstrap');
 import '@design-system-rt/rtk-fonts';
 require('./components/Example');
 
+require('./components/blocks/CardsBlock');
 
 
