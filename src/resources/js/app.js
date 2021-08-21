@@ -12,7 +12,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import '@design-system-rt/rtk-fonts';
-
 require('./components/Example');
 
 require('./components/blocks/CardsBlock');

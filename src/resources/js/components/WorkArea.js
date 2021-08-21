@@ -34,7 +34,7 @@ function WorkArea({ text, input_change }) {
 
     return (
 
-        <div className="container">
+        <div className="container work-area">
             <ThemeProvider themeName="light">
                 {blockList.map((block, index) => { return block.element })}
             </ThemeProvider>

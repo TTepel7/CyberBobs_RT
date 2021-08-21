@@ -10020,23 +10020,20 @@ h3 {
   height: 100px;
 }
 
-.cards-blocks-img {
-  display: inline-block;
-  overflow: hidden;
-  transition: 1s;
-  /* Время эффекта */
-  height: 210px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.work-area {
+  background-color: aquamarine;
 }
 
-.cards-blocks-img img {
-  display: block;
-  transition: 1s;
-  /* Время эффекта */
+.tool-bar {
+  background-color: #313A49;
+  height: 76px;
+  padding: 1.5rem;
+  display: flex;
 }
 
-.cards-blocks-img img:hover {
-  transform: scale(1.2);
-  /* Увеличиваем масштаб */
+.color-picker {
+  width: 174px;
+  top: -0.75rem;
+  height: 40px;
+  background-color: black;
 }

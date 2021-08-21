@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import Button_test from './Button_test';
 import Input_test from "./input_test";
 
-
+import { ThemeProvider } from '@design-system-rt/rtk-ui-kit';
+import ToolBar from "./ToolBar";
 import WorkArea from "./WorkArea";
 
 function Example() {
+
+
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
@@ -16,20 +19,22 @@ function Example() {
 
     }
     return (
-        <div className="container-fluid">
+        <ThemeProvider themeName="dark">
+            <div className="cyber-app">
+                <ToolBar className= 'tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
 
+                <div className="card">
+                    <div className="card-header">Example Component {option.text}</div>
 
-            <div className="card">
-                <div className="card-header">Example Component {option.text}</div>
+                    <div className="card-body">I'm an example component!
+                        <WorkArea text={option.text}></WorkArea>
+                    </div>
 
-                <div className="card-body">I'm an example component!
-                    <Button_test options={option}></Button_test>
-                    <Input_test input_change={get_input_change}></Input_test>
-                    <WorkArea text={option.text}></WorkArea>
                 </div>
-
             </div>
-        </div>
+
+        </ThemeProvider>
+
     );
 }
 
