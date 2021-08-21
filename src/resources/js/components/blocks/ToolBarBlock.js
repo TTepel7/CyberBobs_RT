@@ -666,6 +666,177 @@ function ToolBarBlock({object, changeCallback}) {
                                            }}></InputText>
                             </div>
                         </div>)
+                    } else if (key === 'cards') {
+                        return (<div key={key}>
+                            <h3>Карточка 1</h3>
+                            <div className='p-3'>
+                                <Select label="Отступ формы"
+                                        options={[
+                                            {
+                                                key: 's',
+                                                value: 's'
+                                            },
+                                            {
+                                                key: 'm',
+                                                value: 'm'
+                                            },
+                                            {
+                                                key: 'l',
+                                                value: 'l'
+                                            },
+                                            {
+                                                key: 'xl',
+                                                value: 'xl'
+                                            }
+                                        ]}
+                                        value={value[0].box.spacing}
+                                        onChange={(s_v) => {
+                                            object[key][0].box.spacing = s_v;
+                                            changeCallback(object);
+                                        }}
+                                ></Select>
+                            </div>
+                            <div className='p-3'>
+                                <Select label="Тень формы"
+                                        options={[
+                                            {
+                                                key: 'bottomS',
+                                                value: 'bottomS'
+                                            },
+                                            {
+                                                key: 'bottomM',
+                                                value: 'bottomM'
+                                            },
+                                            {
+                                                key: 'bottomL',
+                                                value: 'bottomL'
+                                            },
+                                            {
+                                                key: 'bottomXL',
+                                                value: 'bottomXL'
+                                            }
+                                        ]}
+                                        value={value[0].box.shadow}
+                                        onChange={(s_v) => {
+                                            object[key][0].box.shadow = s_v;
+                                            changeCallback(object);
+                                        }}
+                                ></Select>
+                            </div>
+                            <div className='p-3'>
+                                <Select label="Сгругление углов формы"
+                                        options={[
+                                            {
+                                                key: 'xs',
+                                                value: 'xs'
+                                            },
+                                            {
+                                                key: 's',
+                                                value: 's'
+                                            },
+                                            {
+                                                key: 'm',
+                                                value: 'm'
+                                            },
+                                            {
+                                                key: 'l',
+                                                value: 'l'
+                                            },
+                                            {
+                                                key: 'xl',
+                                                value: 'xl'
+                                            }
+                                        ]}
+                                        value={value[0].box.cornersRounding}
+                                        onChange={(s_v) => {
+                                            object[key][0].box.cornersRounding = s_v;
+                                            changeCallback(object);
+                                        }}
+                                ></Select>
+                            </div>
+                            <div className='p-3'>
+                                <Select label="Цвет заголовка"
+                                        options={[
+                                            {
+                                                key: 'main',
+                                                value: 'main'
+                                            },
+                                            {
+                                                key: 'info',
+                                                value: 'info'
+                                            },
+                                            {
+                                                key: 'warning',
+                                                value: 'warning'
+                                            },
+                                            {
+                                                key: 'success',
+                                                value: 'success'
+                                            }
+                                        ]}
+                                        value={value[0].title.color}
+                                        onChange={(s_v) => {
+                                            object[key][0].title.color = s_v;
+                                            changeCallback(object);
+                                        }}
+                                ></Select>
+                            </div>
+                            <div className='p-3'>
+                                <Select label="Размер заголовка"
+                                        options={[
+                                            {
+                                                key: 'description',
+                                                value: 'description'
+                                            },
+                                            {
+                                                key: 'caption',
+                                                value: 'caption'
+                                            },
+                                            {
+                                                key: 'mega',
+                                                value: 'mega'
+                                            },
+                                            {
+                                                key: 'h1',
+                                                value: 'h1'
+                                            },
+                                            {
+                                                key: 'h2',
+                                                value: 'h2'
+                                            },
+                                            {
+                                                key: 'h3',
+                                                value: 'h3'
+                                            },
+                                            {
+                                                key: 'h4',
+                                                value: 'h4'
+                                            }
+                                        ]}
+                                        value={value[0].title.variant}
+                                        onChange={(s_v) => {
+                                            object[key][0].title.variant = s_v;
+                                            changeCallback(object);
+                                        }}
+                                ></Select>
+                            </div>
+                            <div className="p-3">
+                                <InputText label="Текст заголовка"
+                                           value={value[0].title.text}
+                                           onChange={() => {
+                                               object[key][0].title.text = event.target.value;
+                                               changeCallback(object);
+                                           }}></InputText>
+                            </div>
+                            <div className="p-3">
+                                <InputText label="ссылка на картинку"
+                                           value={value[0].img}
+                                           onChange={() => {
+                                               object[key][0].img = event.target.value;
+                                               changeCallback(object);
+                                           }}></InputText>
+                            </div>
+                        </div>)
                     }
                 })}
             </ThemeProvider>
@@ -679,11 +850,100 @@ if (document.getElementById('ToolBarBlock')) {
     ReactDOM.render(
         <ToolBarBlock
             object={{
-                title: {
-                    text: "Главный заголовок",
-                    color: "info",
-                    variant: "mega"
-                }
+                cards: [
+                    {
+                        box: {
+                            cornersRounding: "m",
+                            shadow: "bottomM",
+                            spacing: "l",
+                            spacingBottom: "s"
+                        },
+                        img: '',
+                        title: {
+                            text: "Заголовок",
+                            color: "main",
+                            variant: "h2"
+                        },
+                        caption: {
+                            text: "Описание",
+                            color: "caption",
+                            variant: "caption"
+                        },
+                        link: {
+                            text: "Подробнее",
+                            href: "#"
+                        }
+                    },
+                    {
+                        box: {
+                            cornersRounding: "m",
+                            shadow: "bottomM",
+                            spacing: "m",
+                            spacingBottom: "s"
+                        },
+                        img: '',
+                        title: {
+                            text: "Заголовок",
+                            color: "main",
+                            variant: "h2"
+                        },
+                        caption: {
+                            text: "Описание",
+                            color: "caption",
+                            variant: "caption"
+                        },
+                        link: {
+                            text: "Подробнее",
+                            href: "#"
+                        }
+                    },
+                    {
+                        box: {
+                            cornersRounding: "m",
+                            shadow: "bottomM",
+                            spacing: "m",
+                            spacingBottom: "s"
+                        },
+                        img: '',
+                        title: {
+                            text: "Заголовок",
+                            color: "main",
+                            variant: "h2"
+                        },
+                        caption: {
+                            text: "Описание",
+                            color: "caption",
+                            variant: "caption"
+                        },
+                        link: {
+                            text: "Подробнее",
+                            href: "#"
+                        }
+                    },
+                    {
+                        box: {
+                            cornersRounding: "m",
+                            shadow: "bottomM",
+                            spacing: "m",
+                            spacingBottom: "s"
+                        },
+                        img: "https://klike.net/uploads/posts/2019-09/1568528411_3.jpg",
+                        title: {
+                            text: "Заголовок",
+                            color: "main",
+                            variant: "h2"
+                        },
+                        caption: {
+                            text: "Описание",
+                            color: "caption",
+                            variant: "caption"
+                        },
+                        link: {
+                            text: "Подробнее",
+                            href: "#"
+                        }
+                    }
+                ]
             }}
         ></ToolBarBlock>, document.getElementById('ToolBarBlock'));
 }
