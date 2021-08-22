@@ -16,7 +16,7 @@ import FooterBlock from './blocks/FooterBlock';
 import { v4 as uuidv4 } from 'uuid';
 
 
-function WorkArea({ sender, input_change, click_change, propObj }) {
+function WorkArea({ sender, input_change, click_change, propObj,ThemeName,ThemeClass }) {
     const [blocks, setBlocks] = React.useState([])
     const [currentBlock, setCurrentBlock] = React.useState(null)
     if (sender.length > 0) {
@@ -258,8 +258,8 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
     }
 
     return (
-        <div className="container work-area">
-            <ThemeProvider themeName="light">
+        <div className={"container work-area "+ThemeClass.class}>
+            <ThemeProvider themeName={ThemeName.theme}>
 
                 {newArr.sort(sortBlocks).map((block, index) => {
                     switch (block.name) {
@@ -352,7 +352,7 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
                                         }
                                     ]}
                                 ></CardsBlock>
-                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Delete</Button>
+                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Удалить</Button>
                             </div >
                         }
                         case "FooterBlock": {
@@ -369,7 +369,7 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
                                     text={block.propObj.text}
                                     copyright={block.propObj.copyright}
                                 ></FooterBlock>
-                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Delete</Button>
+                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Удалить</Button>
                             </div>
 
                         }
@@ -383,7 +383,7 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
                                 onDragOver={(e) => dragOverHandler(e)}
                                 onDrop={(e) => dropHandler(e, block)}>
                                 <HeaderBlock />
-                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Delete</Button>
+                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Удалить</Button>
                             </div>
 
                         }
@@ -456,7 +456,7 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
                                         }
                                     }}
                                 ></PaymentBlock>
-                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Delete</Button>
+                                <Button className="deleteButton" onClick={(e) => removeBlock(block.order)}>Удалить</Button>
                             </div>
 
                         }

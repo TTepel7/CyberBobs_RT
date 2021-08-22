@@ -39,14 +39,20 @@ function Example() {
         setPropObj({ ...value })
     }
 
+    const [ThemeName,setThemeName]=React.useState({theme:'light'});
+    const [ThemeClass,setThemeClass]=React.useState({class:'bg-light'})
+    function themeChange(v) {
+        setThemeName({theme:v?'dark':'light'});
+        setThemeClass({class:v?'bg-dark':'bg-light'});
+    }
 
     return (
         <ThemeProvider themeName="dark">
             <div className="cyber-app">
-                <ToolBar className='tool-bar-radio' text="Тёмная тема" textStyle="color: white"></ToolBar>
+                <ToolBar className='tool-bar-radio' text="Тёмная тема" textStyle="color: white" ThemeChange={themeChange}></ToolBar>
                 <div className="cyber-content">
                     <BlockLibrary input_change={get_input_change}></BlockLibrary>
-                    <WorkArea sender={sender} click_change={getBlockForProps} propObj={propObj}></WorkArea>
+                    <WorkArea sender={sender} click_change={getBlockForProps} propObj={propObj} ThemeName={ThemeName} ThemeClass={ThemeClass}></WorkArea>
                     <ToolBarBlock object={object} changeCallback={gettingObject} ></ToolBarBlock>
                 </div>
             </div>

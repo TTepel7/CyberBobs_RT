@@ -7,7 +7,7 @@ import download from 'downloadjs'
 import {Switch, RadioGroup, RadioButton, Button} from '@design-system-rt/rtk-ui-kit';
 
 
-function ToolBar() {
+function ToolBar({ThemeChange}) {
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
@@ -30,8 +30,9 @@ function ToolBar() {
         <div className="tool-bar">
             <Switch
                 color="primary2"
-                defaultChecked
-                onChange={function noRefCheck() {
+                defaultChecked={false}
+                onChange={(v)=>{
+                    ThemeChange(v)
                 }}
                 shape="circular"
                 text="Тёмная тема"
