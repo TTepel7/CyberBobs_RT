@@ -20,9 +20,9 @@ function ToolBar({ThemeChange}) {
         //     let img = canvas.toDataURL();
         //     download(img, 'test_img')
         // });
-        domtoimage.toPng(document.querySelector(".work-area"))
+        let el=document.querySelector(".work-area");
+        domtoimage.toPng(el)
             .then(function (dataUrl) {
-                console.log(dataUrl)
                 download(dataUrl, 'test_img')
             })
     }
