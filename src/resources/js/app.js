@@ -14,9 +14,12 @@ require('./bootstrap');
 import '@design-system-rt/rtk-fonts';
 require('./components/Example');
 
-require('./components/blocks/CardsBlock');
-require('./components/blocks/PaymentBlock');
-require('./components/blocks/FooterBlock');
-require('./components/blocks/HeaderBlock');
-require('./components/blocks/ToolBarBlock');
+$(document).ready(function () {
+    $(".toast").toast("show");
+})
 
+// require('./components/blocks/CardsBlock');
+// require('./components/blocks/PaymentBlock');
+// require('./components/blocks/FooterBlock');
+// require('./components/blocks/HeaderBlock');
+// require('./components/blocks/ToolBarBlock');
