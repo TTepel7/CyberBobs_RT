@@ -46,7 +46,7 @@ function ToolBar({ThemeChange}) {
                 }}
                 value="key1"
                 style={{
-                    display: 'inline'
+                    display: 'none'
                 }}
             >
                 <RadioButton
