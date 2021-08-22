@@ -8,7 +8,7 @@ import download from 'downloadjs'
 import { Switch, RadioGroup, RadioButton, Button } from '@design-system-rt/rtk-ui-kit';
 
 
-function ToolBar() {
+function ToolBar({ ThemeChange }) {
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
@@ -21,7 +21,7 @@ function ToolBar() {
     }
 
     function export_html() {
-        var content = document.getElementById('work-area').innerHTML;
+        var content = document.querySelector(".work-area").innerHTML;
         download(content, 'site.html')
     }
 
@@ -34,8 +34,9 @@ function ToolBar() {
         <div className="tool-bar">
             <Switch
                 color="primary2"
-                defaultChecked
-                onChange={function noRefCheck() {
+                defaultChecked={false}
+                onChange={(v) => {
+                    ThemeChange(v)
                 }}
                 shape="circular"
                 text="Тёмная тема"

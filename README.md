@@ -1,17 +1,35 @@
-# CyberBobs_RT
- 
-docker for windows https://docs.docker.com/desktop/windows/install/
+# Графический редактор Athena для дизайн-системы РТК
 
-WL2 win64 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+## Описание
 
-to run
-~~~~
-docker-compose build
-~~~~
+«Мы представляем Графический редактор Athena для дизайн-системы РТК».
 
-after
+Данный графический редактор является дополнением для веб-сайта компании Ростелеком. Решение позволяет сотрудникам, деятельность которых не связана с дизайном, создавать интерфейсы для решения рабочих задач.
 
-run serve.bat or 
-~~~~
-docker-compose up
-~~~~
+Стек решения: PHP Laravel, ReactJS, NGINX, Bootstrap, MySQL, Docker.
+
+Уникальность. Уникальность решения заключается в использовании блоков, что поможет делать простые и лаконичные интерфейсы с использованием дизайн-системы Ростелеком.
+
+Стоимость разработки: 2-4 млн. руб.
+
+Сроки разработки: 6 мес. - пилотная версия.
+
+## Установка
+
+Для развёртывания необходимо установить Docker, ссылки для Windows:
+
+[Docker Desktop](https://docs.docker.com/desktop/windows/install/)
+
+[WL2 win64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+
+После установки необходимо произвести сборку. Для этого необходимо выполнить следующую команду
+`docker-compose build`
+
+## Запуск
+Для запуска приложения необходимо выполнить команду `docker-compose up`
+
+Или запустить `serve.bat` в корне репозитория 
+
+___
+
+CyberBobs 2021 "Цифровой прорыв"
