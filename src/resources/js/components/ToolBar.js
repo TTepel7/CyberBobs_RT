@@ -3,21 +3,28 @@ import ReactDOM from 'react-dom';
 
 
 import WorkArea from "./WorkArea";
-import html2canvas from 'html2canvas';
 import download from 'downloadjs'
-import { Switch, RadioGroup, RadioButton, Button } from '@design-system-rt/rtk-ui-kit';
+import domtoimage from 'dom-to-image';
+import {Switch, RadioGroup, RadioButton, Button} from '@design-system-rt/rtk-ui-kit';
 
 
-function ToolBar({ ThemeChange }) {
+function ToolBar({ThemeChange}) {
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
 
     function export_work() {
-        let canvas = html2canvas(document.querySelector(".work-area"), { useCORS: true }).then(canvas => {
-            let img = canvas.toDataURL("image/png");
-            download(img, 'test_img', "image/png")
-        });
+        // let canvas = html2canvas(document.querySelector(".work-area"), {
+        //     useCORS: true, removeContainer: false
+        // }).then(canvas => {
+        //     let img = canvas.toDataURL();
+        //     download(img, 'test_img')
+        // });
+        domtoimage.toPng(document.querySelector(".work-area"))
+            .then(function (dataUrl) {
+                console.log(dataUrl)
+                download(dataUrl, 'test_img')
+            })
     }
 
     function export_html() {
@@ -27,7 +34,7 @@ function ToolBar({ ThemeChange }) {
 
 
     function get_input_change(value) {
-        setOption({ text: value })
+        setOption({text: value})
     }
 
     return (
@@ -88,11 +95,11 @@ function ToolBar({ ThemeChange }) {
 
             <a href="/" className="brand">Графический редактор Athena</a>
             <Button onClick={export_work}
-                style={{ cssFloat: "right", paddingRight: "1rem", marginLeft: 'auto', marginTop: '-0.75rem' }}
-                shape="circular">Экспорт PNG</Button>
+                    style={{cssFloat: "right", paddingRight: "1rem", marginLeft: 'auto', marginTop: '-0.75rem'}}
+                    shape="circular">Экспорт PNG</Button>
             <Button onClick={export_html} className="exportHTML"
-                style={{ cssFloat: "right", paddingRight: "1rem", marginLeft: '1rem', marginTop: '-0.75rem' }}
-                shape="circular">Экспорт HTML</Button>
+                    style={{cssFloat: "right", paddingRight: "1rem", marginLeft: '1rem', marginTop: '-0.75rem'}}
+                    shape="circular">Экспорт HTML</Button>
         </div>
     );
 }
