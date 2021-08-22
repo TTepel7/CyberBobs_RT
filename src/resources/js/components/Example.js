@@ -56,7 +56,6 @@ function Example() {
                     <WorkArea sender={sender} click_change={getBlockForProps} propObj={propObj} ThemeName={ThemeName} ThemeClass={ThemeClass}></WorkArea>
                     <ToolBarBlock object={object} changeCallback={gettingObject} ></ToolBarBlock>
                 </div>
-                <img src="../img/234324.png"></img>
             </div>
 
         </ThemeProvider>
