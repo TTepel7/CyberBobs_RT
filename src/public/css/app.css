@@ -10097,6 +10097,9 @@ h3 {
   margin-left: 1rem;
 }
 
+.block-component {
+  margin-top: 1rem;
+}
 .block-component .deleteButton {
   display: none;
 }
@@ -10111,8 +10114,6 @@ h3 {
   margin-right: 0.25rem;
   width: 65%;
   padding: 1rem;
-  max-height: 1000px;
-  overflow: auto;
   border: 1px dashed black;
 }
 
@@ -10122,4 +10123,15 @@ h3 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.athena {
+  height: 200px;
+  position: relative;
+  z-index: 1;
+  visibility: visible;
+}
+
+body {
+  font-family: "Rostelecom Basis" !important;
 }
