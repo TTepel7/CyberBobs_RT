@@ -59,7 +59,7 @@ function WorkArea({ sender, input_change, click_change, propObj, ThemeName, Them
 
     function dropHandler(e, block) {
         e.preventDefault()
-        if (block.id !== currentBlock.id) {
+        if (currentBlock && block.id !== currentBlock.id) {
             setBlocks(newArr.map(c => {
                 if (c.id === block.id) {
                     return { ...c, order: currentBlock.order }

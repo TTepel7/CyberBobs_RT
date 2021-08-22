@@ -50,7 +50,7 @@ function ToolBar({ ThemeChange }) {
                 }}
                 value="key1"
                 style={{
-                    display: 'inline'
+                    display: 'none'
                 }}
             >
                 <RadioButton
@@ -85,6 +85,8 @@ function ToolBar({ ThemeChange }) {
                     Круглый
                 </RadioButton>
             </RadioGroup>
+
+            <a href="/" className="brand">Графический редактор Athena</a>
             <Button onClick={export_work}
                 style={{ cssFloat: "right", paddingRight: "1rem", marginLeft: 'auto', marginTop: '-0.75rem' }}
                 shape="circular">Экспорт PNG</Button>

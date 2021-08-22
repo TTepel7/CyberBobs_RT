@@ -61,24 +61,29 @@
 }
 
 .block-library{
-    width: 20%;
-    background-color: #313A49;
-    height: 700px;
-    font-size: 16px
+    width: 16%;
+    background-color: #F4F4F5;
+    height: 1000px;
+    overflow: auto;
 }
 
 .library-item{
-    color: white;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
     height: 40px;
-    border: 1px solid black;
+    border-bottom: 0.1rem solid gray;
+    border-left: 0;
+    border-right: 0;
     padding-top: 0.5rem;
     border-radius: 1rem;
     text-align: center;
-    background-color: #313A49;
-    margin-top: 1.5rem;
+    background-color: #F4F4F5;
     cursor: grab;
+    font-weight: bold;
+}
+.library-item:hover{
+    border-right: 5px solid orangered;
 }
 
 .cyber-content{
@@ -89,7 +94,9 @@
     border: 1px solid #c1c1c1;
     overflow: auto;
 }
-
+.tool-bar-scroll h3{
+    margin-left: 1rem;
+}
 .block-component{
     .deleteButton{
         display: none;
@@ -101,3 +108,22 @@
         display: block;
     }
 }
+.work-area{
+    margin-top: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    width: 65%;
+    padding: 1rem;
+    max-height: 1000px;
+    overflow: auto;
+    border: 1px dashed black;
+
+}
+.brand{
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+

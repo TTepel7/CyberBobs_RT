@@ -33,12 +33,13 @@ function BlockLibrary({ text, input_change }) {
     return (
 
         <div className="block-library">
-            <h3>Библиотека блоков</h3>
+            <h3 className="text-center mt-3">Библиотека блоков</h3>
             <hr />
             <div
                 draggable={true}
                 onDragStart={(e, ui) => dragStartHandler(e, ui)}
-                className="library-item">
+                className="library-item"
+            >
                 Блок карточек
             </div>
             <div

@@ -17,7 +17,6 @@ import ToolBarBlock from './blocks/ToolBarBlock';
 
 import CardsBlock from './blocks/CardsBlock';
 
-
 function Example() {
 
     const [sender, setSender] = React.useState([])
@@ -30,6 +29,8 @@ function Example() {
         setSender([value])
     }
 
+
+    //setTimeout(athenaMeeting, 30000)
     function getBlockForProps(value) {
         setObject(value)
     }
@@ -39,11 +40,11 @@ function Example() {
         setPropObj({ ...value })
     }
 
-    const [ThemeName,setThemeName]=React.useState({theme:'light'});
-    const [ThemeClass,setThemeClass]=React.useState({class:'bg-light'})
+    const [ThemeName, setThemeName] = React.useState({ theme: 'light' });
+    const [ThemeClass, setThemeClass] = React.useState({ class: 'bg-light' })
     function themeChange(v) {
-        setThemeName({theme:v?'dark':'light'});
-        setThemeClass({class:v?'bg-dark':'bg-light'});
+        setThemeName({ theme: v ? 'dark' : 'light' });
+        setThemeClass({ class: v ? 'bg-dark' : 'bg-light' });
     }
 
     return (
@@ -55,6 +56,7 @@ function Example() {
                     <WorkArea sender={sender} click_change={getBlockForProps} propObj={propObj} ThemeName={ThemeName} ThemeClass={ThemeClass}></WorkArea>
                     <ToolBarBlock object={object} changeCallback={gettingObject} ></ToolBarBlock>
                 </div>
+                <img src="../img/234324.png"></img>
             </div>
 
         </ThemeProvider>
