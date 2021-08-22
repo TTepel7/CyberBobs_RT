@@ -10057,18 +10057,22 @@ h3 {
 
 .block-library {
   width: 20%;
-  background-color: lightgrey;
+  background-color: #313A49;
   height: 700px;
+  font-size: 16px;
 }
 
 .library-item {
-  margin-left: auto;
-  margin-right: auto;
+  color: white;
+  margin-left: 3rem;
+  margin-right: 3rem;
   height: 40px;
   border: 1px solid black;
   padding-top: 0.5rem;
+  border-radius: 1rem;
   text-align: center;
-  background-color: lightgrey;
+  background-color: #313A49;
+  margin-top: 1.5rem;
   cursor: -webkit-grab;
   cursor: grab;
 }
