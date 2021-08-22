@@ -16,7 +16,7 @@ import FooterBlock from './blocks/FooterBlock';
 import { v4 as uuidv4 } from 'uuid';
 
 
-function WorkArea({ sender, input_change, click_change, propObj,ThemeName,ThemeClass }) {
+function WorkArea({ sender, input_change, click_change, propObj, ThemeName, ThemeClass }) {
     const [blocks, setBlocks] = React.useState([])
     const [currentBlock, setCurrentBlock] = React.useState(null)
     if (sender.length > 0) {
@@ -258,8 +258,11 @@ function WorkArea({ sender, input_change, click_change, propObj,ThemeName,ThemeC
     }
 
     return (
-        <div className={"container work-area "+ThemeClass.class}>
+
+
+        <div className={"container work-area " + ThemeClass.class}>
             <ThemeProvider themeName={ThemeName.theme}>
+
 
                 {newArr.sort(sortBlocks).map((block, index) => {
                     switch (block.name) {

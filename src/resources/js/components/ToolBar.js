@@ -1,29 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 import WorkArea from "./WorkArea";
 import html2canvas from 'html2canvas';
 import download from 'downloadjs'
-import {Switch, RadioGroup, RadioButton, Button} from '@design-system-rt/rtk-ui-kit';
+import { Switch, RadioGroup, RadioButton, Button } from '@design-system-rt/rtk-ui-kit';
 
 
-function ToolBar({ThemeChange}) {
+function ToolBar({ ThemeChange }) {
     const [option, setOption] = React.useState({
         text: 'Проверка'
     });
 
     function export_work() {
-        let canvas= html2canvas(document.querySelector(".work-area"),{ useCORS: true}).then(canvas => {
-                let img=canvas.toDataURL("image/png");
-             download(img,'test_img',"image/png")
+        let canvas = html2canvas(document.querySelector(".work-area"), { useCORS: true }).then(canvas => {
+            let img = canvas.toDataURL("image/png");
+            download(img, 'test_img', "image/png")
         });
-
-
-
     }
 
+    function export_html() {
+        var content = document.querySelector(".work-area").innerHTML;
+        download(content, 'site.html')
+    }
+
+
     function get_input_change(value) {
-        setOption({text: value})
+        setOption({ text: value })
     }
 
     return (
@@ -31,7 +35,7 @@ function ToolBar({ThemeChange}) {
             <Switch
                 color="primary2"
                 defaultChecked={false}
-                onChange={(v)=>{
+                onChange={(v) => {
                     ThemeChange(v)
                 }}
                 shape="circular"
@@ -82,8 +86,11 @@ function ToolBar({ThemeChange}) {
                 </RadioButton>
             </RadioGroup>
             <Button onClick={export_work}
-                    style={{float: "right", paddingRight: "1rem", marginLeft: 'auto', marginTop: '-0.75rem'}}
-                    shape="circular">Экспортировать</Button>
+                style={{ cssFloat: "right", paddingRight: "1rem", marginLeft: 'auto', marginTop: '-0.75rem' }}
+                shape="circular">Экспорт PNG</Button>
+            <Button onClick={export_html} className="exportHTML"
+                style={{ cssFloat: "right", paddingRight: "1rem", marginLeft: '1rem', marginTop: '-0.75rem' }}
+                shape="circular">Экспорт HTML</Button>
         </div>
     );
 }
