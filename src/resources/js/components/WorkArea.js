@@ -258,7 +258,7 @@ function WorkArea({ sender, input_change, click_change, propObj }) {
     }
 
     return (
-        <div className="container work-area">
+        <div className="container work-area" id='work-area'>
             <ThemeProvider themeName="light">
 
                 {newArr.sort(sortBlocks).map((block, index) => {
